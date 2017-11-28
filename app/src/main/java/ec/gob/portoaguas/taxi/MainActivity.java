@@ -29,14 +29,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -51,10 +44,10 @@ public class MainActivity extends AppCompatActivity
         /*circle menu*/
         circleMenu = (CircleMenu) findViewById(R.id.circle_menu);
 
-        circleMenu.setMainMenu(Color.parseColor("#FBC02D"), R.drawable.car_wash, R.drawable.close)
-                .addSubMenu(Color.parseColor("#258CFF"), R.drawable.human_greeting)
+        circleMenu.setMainMenu(Color.parseColor("#FBC02D"), R.drawable.ic_frontal_taxi_cab, R.drawable.close)
+                .addSubMenu(Color.parseColor("#FFEB3B"), R.drawable.human_greeting)
                 .addSubMenu(Color.parseColor("#30A400"), R.drawable.ic_menu_send)
-                .addSubMenu(Color.parseColor("#FF4B32"), R.drawable.ic_menu_share)
+                .addSubMenu(Color.parseColor("#FF4B32"), R.drawable.ic_call_center_operator)
                 .addSubMenu(Color.parseColor("#8A39FF"), R.drawable.ic_menu_gallery)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
 
@@ -65,6 +58,7 @@ public class MainActivity extends AppCompatActivity
                         }else if(index==1){
 
                         }else if(index==2){
+                            Toast.makeText(MainActivity.this,"Denunciar Taxi",Toast.LENGTH_SHORT).show();
 
                         }else if(index==3){
 
