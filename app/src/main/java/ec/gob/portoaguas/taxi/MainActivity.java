@@ -1,5 +1,6 @@
 package ec.gob.portoaguas.taxi;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,10 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.hitomi.cmlibrary.CircleMenu;
+import com.hitomi.cmlibrary.OnMenuSelectedListener;
+import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    CircleMenu circleMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +46,41 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        /*circle menu*/
+        circleMenu = (CircleMenu) findViewById(R.id.circle_menu);
+
+        circleMenu.setMainMenu(Color.parseColor("#FBC02D"), R.drawable.car_wash, R.drawable.close)
+                .addSubMenu(Color.parseColor("#258CFF"), R.drawable.human_greeting)
+                .addSubMenu(Color.parseColor("#30A400"), R.drawable.ic_menu_send)
+                .addSubMenu(Color.parseColor("#FF4B32"), R.drawable.ic_menu_share)
+                .addSubMenu(Color.parseColor("#8A39FF"), R.drawable.ic_menu_gallery)
+                .setOnMenuSelectedListener(new OnMenuSelectedListener() {
+
+                    @Override
+                    public void onMenuSelected(int index) {
+                        if(index==0){
+                            Toast.makeText(MainActivity.this,"Pedir un Taxi",Toast.LENGTH_SHORT).show();
+                        }else if(index==1){
+
+                        }else if(index==2){
+
+                        }else if(index==3){
+
+                        }
+                    }
+
+                }).setOnMenuStatusChangeListener(new OnMenuStatusChangeListener() {
+
+            @Override
+            public void onMenuOpened() {}
+
+            @Override
+            public void onMenuClosed() {}
+
+        });
+        /**/
     }
 
     @Override
