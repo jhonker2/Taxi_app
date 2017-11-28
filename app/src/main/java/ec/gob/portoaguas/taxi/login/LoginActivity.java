@@ -79,7 +79,10 @@ public class LoginActivity extends AppCompatActivity{
                 } else if(!validarEmail(txt_usuario.getText().toString())) {
                     txt_usuario.setError("Correo no valido");
                 }else{
-                    new Login_cliente().execute(txt_usuario.getText().toString(), txt_clave.getText().toString());
+                   // new Login_cliente().execute(txt_usuario.getText().toString(), txt_clave.getText().toString());
+                    Intent inte = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(inte);
+                    finish();
                 }
 
             }
