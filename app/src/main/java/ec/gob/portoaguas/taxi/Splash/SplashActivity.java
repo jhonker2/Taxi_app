@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
+import ec.gob.portoaguas.taxi.MainActivity;
 import ec.gob.portoaguas.taxi.R;
 import ec.gob.portoaguas.taxi.login.LoginActivity;
 
@@ -18,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent Homeintent = new Intent(SplashActivity.this, LoginActivity.class);
+                Intent Homeintent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(Homeintent);
                 finish();
                // overridePendingTransition(R.anim.zoom_back_in,R.anim.zoom_back_out);
